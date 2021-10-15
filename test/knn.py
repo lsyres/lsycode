@@ -27,6 +27,14 @@ class KNN:
         most_common = Counter(k_neighbor_lables).most_common(1)
         return most_common[0][0]
 
+ii = np.random.random(100)
+jj = np.random.random(100)
+X_train = list(np.array(k) for k in zip(ii,jj))
+y_train = np.random.choice([1,2,3,4,5],100)
+X_test = np.array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9])
+
 model = KNN(k=5)
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
+
+print(predictions)
